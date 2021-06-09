@@ -129,14 +129,14 @@ public class BalanceFragment extends Fragment implements AdapterView.OnItemSelec
                  expenseList.add(new ExpenseList("Food",foodExpense));
              if(travelExpense!=0)
                  expenseList.add(new ExpenseList("Travel",travelExpense));
-             if(clothesExpense!=0)
-                 expenseList.add(new ExpenseList("Clothes",clothesExpense));
-             if(moviesExpense!=0)
-                 expenseList.add(new ExpenseList("Movies",moviesExpense));
+         //    if(clothesExpense!=0)
+           //      expenseList.add(new ExpenseList("Clothes",clothesExpense));
+          //   if(moviesExpense!=0)
+            //     expenseList.add(new ExpenseList("Movies",moviesExpense));
              if(heathExpense!=0)
                  expenseList.add(new ExpenseList("Health",heathExpense));
-             if(groceryExpense!=0)
-                 expenseList.add(new ExpenseList("Grocery",groceryExpense));
+            // if(groceryExpense!=0)
+              //   expenseList.add(new ExpenseList("Grocery",groceryExpense));
              if(otherExpense!=0)
                  expenseList.add(new ExpenseList("Other",otherExpense));
             }
@@ -214,10 +214,10 @@ public class BalanceFragment extends Fragment implements AdapterView.OnItemSelec
     private void getAllPieValues(){
         foodExpense =mAppDb.transactionDao().getSumExpenseByCategory("Food");
         travelExpense=mAppDb.transactionDao().getSumExpenseByCategory("Travel");
-        clothesExpense=mAppDb.transactionDao().getSumExpenseByCategory("Clothes");
-        moviesExpense=mAppDb.transactionDao().getSumExpenseByCategory("Movies");
+        //clothesExpense=mAppDb.transactionDao().getSumExpenseByCategory("Clothes");
+        //moviesExpense=mAppDb.transactionDao().getSumExpenseByCategory("Movies");
         heathExpense=mAppDb.transactionDao().getSumExpenseByCategory("Health");
-        groceryExpense=mAppDb.transactionDao().getSumExpenseByCategory("Grocery");
+        //groceryExpense=mAppDb.transactionDao().getSumExpenseByCategory("Grocery");
         otherExpense=mAppDb.transactionDao().getSumExpenseByCategory("Other");
     }
 
@@ -240,10 +240,10 @@ public class BalanceFragment extends Fragment implements AdapterView.OnItemSelec
 
         foodExpense =mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Food",sdate,edate);
         travelExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Travel",sdate,edate);
-        clothesExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Clothes",sdate,edate);
-        moviesExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Movies",sdate,edate);
+       // clothesExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Clothes",sdate,edate);
+        //moviesExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Movies",sdate,edate);
         heathExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Health",sdate,edate);
-        groceryExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Grocery",sdate,edate);
+        //groceryExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Grocery",sdate,edate);
         otherExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Other",sdate,edate);
     }
 
@@ -266,11 +266,11 @@ public class BalanceFragment extends Fragment implements AdapterView.OnItemSelec
         final long edate=eDate.getTime();
 
         foodExpense =mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Food",sdate,edate);
-        travelExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Travel",sdate,edate);
+      //  travelExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Travel",sdate,edate);
         clothesExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Clothes",sdate,edate);
-        moviesExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Movies",sdate,edate);
+       // moviesExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Movies",sdate,edate);
         heathExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Health",sdate,edate);
-        groceryExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Grocery",sdate,edate);
+       // groceryExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Grocery",sdate,edate);
         otherExpense=mAppDb.transactionDao().getSumExpenseByCategoryCustomDate("Other",sdate,edate);
     }
 
