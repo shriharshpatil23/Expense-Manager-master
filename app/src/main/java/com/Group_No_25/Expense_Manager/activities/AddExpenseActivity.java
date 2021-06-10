@@ -167,8 +167,8 @@ public class AddExpenseActivity extends AppCompatActivity {
 
             categories.add("Food");
             categories.add("Travel");
-         //   categories.add("Clothes");
-           // categories.add("Movies");
+           //categories.add("Clothes");
+            //  categories.add("Movies");
             categories.add("Health");
             categories.add("Education");
             categories.add("Other");
