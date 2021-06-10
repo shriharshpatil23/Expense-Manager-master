@@ -92,7 +92,7 @@ public class BalanceCategoryFragment extends Fragment {
 
     private AppDatabase mAppDb;
 
-    private int TotalIncome;
+    private int TotalIncome,amount1,amount2,amount3,amount4,amount5;
 
   /*  private TextView balanceTv,incomeTv,expenseTv;
     private TextView dateTv;
@@ -130,13 +130,80 @@ public class BalanceCategoryFragment extends Fragment {
 
 
     getTotalIncome();
-     //  getAllCategorySum();
+       //SumByCategory();
+        education_expense_sum();
+        food_expense_sum();
+        travel_expense_sum();
+        health_expense_sum();
+        other_expense_sum();
         getCategorySum();
 
 
 
         return view;
     }
+
+    private void other_expense_sum() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable(){
+            @Override
+            public void run() {
+                int oth = mAppDb.transactionDao().getSumExpenseByCategory("Other");
+                otherExpense1 = oth;
+
+            }
+        });
+    }
+
+    private void health_expense_sum() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable(){
+            @Override
+            public void run() {
+                int heal = mAppDb.transactionDao().getSumExpenseByCategory("Health");
+                heathExpense1 = heal;
+
+            }
+        });
+    }
+
+    private void travel_expense_sum() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable(){
+            @Override
+            public void run() {
+                int trv = mAppDb.transactionDao().getSumExpenseByCategory("Travel");
+                travelExpense1 = trv;
+
+            }
+        });
+    }
+
+
+    private void food_expense_sum() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable(){
+        @Override
+        public void run() {
+            int food = mAppDb.transactionDao().getSumExpenseByCategory("Food");
+             foodExpense1 = food;
+
+        }
+    });
+    }
+
+
+
+
+    private void education_expense_sum() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                int edu = mAppDb.transactionDao().getSumExpenseByCategory("Education");
+                educationExpense1 = edu;
+
+            }
+        });
+    }
+
+
+
 
     private void getTotalIncome() {
         AppExecutors.getInstance().diskIO().execute(new Runnable() {
@@ -155,7 +222,7 @@ public class BalanceCategoryFragment extends Fragment {
 
 
 
-  /* private void getAllCategorySum(){
+ /*private void SumByCategory(){
         foodExpense1 =mAppDb.transactionDao().getSumExpenseByCategory("Food");
         travelExpense1=mAppDb.transactionDao().getSumExpenseByCategory("Travel");
         //clothesExpense=mAppDb.transactionDao().getSumExpenseByCategory("Clothes");
@@ -171,7 +238,7 @@ public class BalanceCategoryFragment extends Fragment {
 
 
      private void getCategorySum() {
-        final int amount1 = (TotalIncome)/5 - educationExpense1;
+         amount1 = (TotalIncome)/5 - educationExpense1;
         AppExecutors.getInstance().mainThread().execute(new Runnable() {
             @Override
             public void run() {
@@ -181,7 +248,7 @@ public class BalanceCategoryFragment extends Fragment {
         });
 
 
-        final int amount2 = (TotalIncome)/5 - foodExpense1;
+         amount2 = (TotalIncome)/5 - foodExpense1;
         AppExecutors.getInstance().mainThread().execute(new Runnable() {
             @Override
             public void run() {
@@ -190,7 +257,7 @@ public class BalanceCategoryFragment extends Fragment {
             }
         });
 
-        final int amount3 = (TotalIncome)/5 - travelExpense1;
+         amount3 = (TotalIncome)/5 - travelExpense1;
         AppExecutors.getInstance().mainThread().execute(new Runnable() {
             @Override
             public void run() {
@@ -199,7 +266,7 @@ public class BalanceCategoryFragment extends Fragment {
             }
         });
 
-        final int amount4 = (TotalIncome)/5 - heathExpense1;
+         amount4 = (TotalIncome)/5 - heathExpense1;
         AppExecutors.getInstance().mainThread().execute(new Runnable() {
             @Override
             public void run() {
@@ -208,7 +275,7 @@ public class BalanceCategoryFragment extends Fragment {
             }
         });
 
-        final int amount5 = (TotalIncome)/5 - otherExpense1;
+          amount5 = (TotalIncome)/5 - otherExpense1;
         AppExecutors.getInstance().mainThread().execute(new Runnable() {
             @Override
             public void run() {
