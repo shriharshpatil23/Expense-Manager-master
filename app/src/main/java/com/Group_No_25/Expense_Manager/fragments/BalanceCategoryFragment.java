@@ -78,11 +78,11 @@ public class BalanceCategoryFragment extends Fragment {
     CardView health_card;
     CardView other_card;
 
-    EditText education_et;
-    EditText food_et;
-    EditText travel_et;
-    EditText health_et;
-    EditText other_et;
+    TextView education_et;
+    TextView food_et;
+    TextView travel_et;
+    TextView health_et;
+    TextView other_et;
 
     TextView education_text;
     TextView food_text;
