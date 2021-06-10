@@ -90,6 +90,17 @@ public class BalanceCategoryFragment extends Fragment {
     TextView health_text;
     TextView other_text;
 
+    private AppDatabase mAppDb;
+
+    private int TotalIncome;
+
+  /*  private TextView balanceTv,incomeTv,expenseTv;
+    private TextView dateTv;
+*/
+
+    private int foodExpense1,travelExpense1,clothesExpense,moviesExpense,heathExpense1,educationExpense1,otherExpense1;
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -115,12 +126,106 @@ public class BalanceCategoryFragment extends Fragment {
         health_text = view.findViewById(R.id.health_balance_view);
         other_text = view.findViewById(R.id.other_balance_view);
 
+        mAppDb = AppDatabase.getInstance(getContext());
 
+
+    getTotalIncome();
+     //  getAllCategorySum();
+        getCategorySum();
 
 
 
         return view;
     }
+
+    private void getTotalIncome() {
+        AppExecutors.getInstance().diskIO().execute(new Runnable() {
+            @Override
+            public void run() {
+                int income = mAppDb.transactionDao().getAmountByTransactionType(Constants.incomeCategory);
+                TotalIncome = income;
+
+            }
+        });
+
+    }
+
+
+
+
+
+
+  /* private void getAllCategorySum(){
+        foodExpense1 =mAppDb.transactionDao().getSumExpenseByCategory("Food");
+        travelExpense1=mAppDb.transactionDao().getSumExpenseByCategory("Travel");
+        //clothesExpense=mAppDb.transactionDao().getSumExpenseByCategory("Clothes");
+        //moviesExpense=mAppDb.transactionDao().getSumExpenseByCategory("Movies");
+        heathExpense1=mAppDb.transactionDao().getSumExpenseByCategory("Health");
+        educationExpense1=mAppDb.transactionDao().getSumExpenseByCategory("Education");
+        otherExpense1=mAppDb.transactionDao().getSumExpenseByCategory("Other");
+    }
+*/
+
+
+
+
+
+     private void getCategorySum() {
+        final int amount1 = (TotalIncome)/5 - educationExpense1;
+        AppExecutors.getInstance().mainThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                education_text.setText(String.valueOf(amount1)+" \u20B9");
+
+            }
+        });
+
+
+        final int amount2 = (TotalIncome)/5 - foodExpense1;
+        AppExecutors.getInstance().mainThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                food_text.setText(String.valueOf(amount2)+" \u20B9");
+
+            }
+        });
+
+        final int amount3 = (TotalIncome)/5 - travelExpense1;
+        AppExecutors.getInstance().mainThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                travel_text.setText(String.valueOf(amount3)+" \u20B9");
+
+            }
+        });
+
+        final int amount4 = (TotalIncome)/5 - heathExpense1;
+        AppExecutors.getInstance().mainThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                health_text.setText(String.valueOf(amount4)+" \u20B9");
+
+            }
+        });
+
+        final int amount5 = (TotalIncome)/5 - otherExpense1;
+        AppExecutors.getInstance().mainThread().execute(new Runnable() {
+            @Override
+            public void run() {
+                other_text.setText(String.valueOf(amount5)+" \u20B9");
+
+            }
+        });
+
+
+    }
+
+
+
+
+
+
+
 
 
 }
