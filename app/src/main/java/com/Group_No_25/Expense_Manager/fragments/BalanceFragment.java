@@ -298,6 +298,7 @@ public class BalanceFragment extends Fragment implements AdapterView.OnItemSelec
                 incomeAmount = income;
                 int expense = mAppDb.transactionDao().getAmountByTransactionType(Constants.expenseCategory);
                 expenseAmount = expense;
+
                 int balance = income - expense;
                 balanceAmount = balance;
             }
