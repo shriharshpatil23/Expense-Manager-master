@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.Group_No_25.Expense_Manager.R;
 import com.Group_No_25.Expense_Manager.adapters.SectionsPageAdapter;
+import com.Group_No_25.Expense_Manager.fragments.BalanceCategoryFragment;
 import com.Group_No_25.Expense_Manager.fragments.BalanceFragment;
 import com.Group_No_25.Expense_Manager.fragments.CustomBottomSheetDialogFragment;
 import com.Group_No_25.Expense_Manager.fragments.ExpenseFragment;
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         SectionsPageAdapter adapter=new SectionsPageAdapter(getSupportFragmentManager());
         adapter.addFragment(new ExpenseFragment(),"Expenses");
         adapter.addFragment(new BalanceFragment(),"Balance");
+        adapter.addFragment(new BalanceCategoryFragment(),"Balance by category");
         viewPager.setAdapter(adapter);
     }
 
