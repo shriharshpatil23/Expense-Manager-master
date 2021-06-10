@@ -13,6 +13,7 @@
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
         <activity android:name="com.Group_No_25.Expense_Manager.activities.AddExpenseActivity" />
         <activity android:name="com.Group_No_25.Expense_Manager.activities.SplashScreen"
             android:theme="@style/SplashTheme">
