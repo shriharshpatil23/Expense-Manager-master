@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -300,7 +301,7 @@ public class BalanceFragment extends Fragment implements AdapterView.OnItemSelec
                 expenseAmount = expense;
 
                 int balance = income - expense;
-                balanceAmount = balance;
+                    balanceAmount = balance;
             }
         });
         AppExecutors.getInstance().mainThread().execute(new Runnable() {
