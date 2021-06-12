@@ -68,8 +68,6 @@ import com.Group_No_25.Expense_Manager.fragments.ExpenseFragment;
 
  import static com.Group_No_25.Expense_Manager.activities.MainActivity.fab;
 
-//public class BalanceCategoryFragment {
-//}
 public class BalanceCategoryFragment extends Fragment {
 
     CardView education_card;
@@ -94,9 +92,7 @@ public class BalanceCategoryFragment extends Fragment {
 
     private int TotalIncome,amount1,amount2,amount3,amount4,amount5;
 
-  /*  private TextView balanceTv,incomeTv,expenseTv;
-    private TextView dateTv;
-*/
+
 
     private int foodExpense1,travelExpense1,clothesExpense,moviesExpense,heathExpense1,educationExpense1,otherExpense1;
 
