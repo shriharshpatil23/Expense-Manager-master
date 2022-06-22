@@ -7,6 +7,7 @@ You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
 - [Features](#features)
+- [Screenshots](#screenshots)
 - [References](#references)
 - [Author Info](#author-info)
 
@@ -52,6 +53,8 @@ This application allows users to maintain a digital automated diary. Each user w
 <img src="https://user-images.githubusercontent.com/82522510/174932473-a69d0fad-063d-4505-9368-faa623c8a6d1.png " width="140">
 
 <img src="https://user-images.githubusercontent.com/82522510/174932500-f98514e9-7140-499f-908c-1f4aff6a9302.png" width="140">
+
+[Back To The Top](#read-me-template)
 
 ---
 
