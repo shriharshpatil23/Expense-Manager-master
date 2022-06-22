@@ -45,10 +45,13 @@ This application allows users to maintain a digital automated diary. Each user w
 
 ## Screenshots
 
-![image](https://user-images.githubusercontent.com/82522510/174932404-2c7009b7-8ba6-4b49-b73e-5ca8a1faed9c.png | width = 100)
-![image](https://user-images.githubusercontent.com/82522510/174932430-1adf28b5-9887-43ae-989e-d09b968a05be.png | width = 100)
-![image](https://user-images.githubusercontent.com/82522510/174932473-a69d0fad-063d-4505-9368-faa623c8a6d1.png | width = 100)
-![image](https://user-images.githubusercontent.com/82522510/174932500-f98514e9-7140-499f-908c-1f4aff6a9302.png | width = 100)
+<img src="https://user-images.githubusercontent.com/82522510/174932404-2c7009b7-8ba6-4b49-b73e-5ca8a1faed9c.png" width="140">
+
+<img src="https://user-images.githubusercontent.com/82522510/174932430-1adf28b5-9887-43ae-989e-d09b968a05be.png" width="140">
+
+<img src="https://user-images.githubusercontent.com/82522510/174932473-a69d0fad-063d-4505-9368-faa623c8a6d1.png " width="140">
+
+<img src="https://user-images.githubusercontent.com/82522510/174932500-f98514e9-7140-499f-908c-1f4aff6a9302.png" width="140">
 
 ---
 
